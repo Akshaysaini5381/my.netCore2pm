@@ -1,0 +1,49 @@
+﻿@model my.netCore2pm.Models.A_Model
+
+@{
+    ViewData["Title"] = "addfrom";
+}
+
+<h1>addfrom</h1>
+
+<h4>A_Model</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="addfrom">
+            <input type="hidden" asp-for="Id"  />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input type="text" asp-for="Name" class="form-control" required="required"  />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input type="email" asp-for="Email" class="form-control" required="required" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" required="required" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="College" class="control-label"></label>
+                <input asp-for="College" class="form-control" required="required" />
+                <span asp-validation-for="College" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+@*
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@
